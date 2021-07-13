@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Spoiler Blocker",
+  "description": "Blocks spoiler content using any provided keywords. Stop spoilers, sports, or celebrity click-bait from ruining your interwebs.",
+  "version": "1.0",
+  
+  "content_scripts": [
+     {
+       "matches": ["http://*/*", "https://*/*"],
+       "css": ["spoiler_style.css"],
+       "js": ["content_script.js"],
+       "run_at": "document_end"
+     }
+   ],
+
+  "browser_action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "declarativeContent",
+    "activeTab",
+    "storage",
+    "https://ajax.googleapis.com/"
+  ]
+}
